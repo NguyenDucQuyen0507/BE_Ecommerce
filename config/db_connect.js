@@ -1,8 +1,12 @@
-const { default: mongoose } = require("mongoose");
+// const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
 
 const dbConnect = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URL);
+    const conn = await mongoose.connect(process.env.MONGODB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     if (conn.connection.readyState === 1) {
       console.log("DB connection successfully");
     } else {
