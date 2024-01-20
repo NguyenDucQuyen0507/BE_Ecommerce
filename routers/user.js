@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { verifyAccessToken, isAdmin } = require("../middlewares/verifyToken");
 const uploader = require("../config/cloudinary.config");
-// import { reisgter } from "../controllers/user.js";
 const ctrl = require("../controllers/user");
 router.post("/mock", ctrl.createUser);
 router.post("/register", ctrl.register);
