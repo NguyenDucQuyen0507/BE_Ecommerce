@@ -8,15 +8,16 @@ const initRouter = require("./routers");
 //dọc được các data có kiểu  URL-encoded (name=John&age=30&email=john@example.com)
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
-    methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+    // origin: "*",
+    origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+    methods: "GET,POST,PATCH,DELETE,PUT,OPTIONS",
+    credentials: true,
     allowedHeaders: [
       "Content-Type",
       "Authorization",
       "access_token",
       "refreshtoken",
     ],
-    credentials: true,
     preflightContinue: false,
   })
 );
