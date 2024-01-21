@@ -10,7 +10,14 @@ app.use(
   cors({
     origin: process.env.CLIENT_URL,
     methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "access_token",
+      "refreshtoken",
+    ],
     credentials: true,
+    preflightContinue: false,
   })
 );
 app.use(cookieParser());
