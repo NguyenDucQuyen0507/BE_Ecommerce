@@ -9,7 +9,11 @@ const initRouter = require("./routers");
 app.use(
   cors({
     // origin: "*",
-    origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://e-commerce-one-jade-85.vercel.app/",
+      "https://e-commerce-server-5vvp.onrender.com/",
+    ],
     methods: "GET,POST,PATCH,DELETE,PUT,OPTIONS",
     credentials: true,
     allowedHeaders: [
