@@ -11,6 +11,7 @@ app.use(
     // origin: "*",
     origin: [
       "http://localhost:3000",
+      "http://localhost:5000",
       "https://e-commerce-one-jade-85.vercel.app/",
       "https://e-commerce-server-5vvp.onrender.com/",
     ],
@@ -26,11 +27,11 @@ app.use(
   })
 );
 app.use(cookieParser());
-const port = process.env.PORT || 8888;
+// const port = process.env.PORT || 8888;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 dbConnect();
 initRouter(app);
-app.listen(port, () => {
-  console.log("Server listening on port", port);
-});
+// app.listen(port, () => {
+//   console.log("Server listening on port", port);
+// });
