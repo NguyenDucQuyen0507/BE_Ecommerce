@@ -13,6 +13,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:5000",
       "https://e-commerce-iota-fawn.vercel.app/",
+      "https://e-commerce-server-jqyv.onrender.com/api",
     ],
     methods: "GET,POST,PATCH,DELETE,PUT,OPTIONS",
     credentials: true,
