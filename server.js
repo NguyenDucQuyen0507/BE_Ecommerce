@@ -12,7 +12,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5000",
-      "https://e-commerce-one-jade-85.vercel.app/",
+      "https://e-commerce-iota-fawn.vercel.app/",
     ],
     methods: "GET,POST,PATCH,DELETE,PUT,OPTIONS",
     credentials: true,
