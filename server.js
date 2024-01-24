@@ -12,8 +12,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:5000",
-      "https://e-commerce-iota-fawn.vercel.app/",
-      "https://e-commerce-server-jqyv.onrender.com/api",
+      "https://e-commerce-iota-fawn.vercel.app",
+      "https://e-commerce-server-jqyv.onrender.com",
     ],
     methods: "GET,POST,PATCH,DELETE,PUT,OPTIONS",
     credentials: true,
