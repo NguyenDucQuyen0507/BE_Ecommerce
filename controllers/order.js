@@ -152,7 +152,7 @@ const getAllOrder = asyncHandler(async (req, res) => {
 
   //* pagination
   const page = +req.query.page || 1;
-  const limit = +req.query.limit || process.env.LIMIT_PRODUCTS;
+  const limit = +req.query.limit || process.env.REACT_APP_LIMIT_PRODUCTS;
   const skip = (page - 1) * limit;
   queryCommand.skip(skip).limit(limit);
   try {
@@ -233,7 +233,7 @@ const getOrderUser = asyncHandler(async (req, res) => {
   }
   //* pagination
   const page = +req.query.page || 1;
-  const limit = +req.query.limit || process.env.LIMIT_PRODUCTS;
+  const limit = +req.query.limit || process.env.REACT_APP_LIMIT_PRODUCTS;
   const skip = (page - 1) * limit;
   queryCommand.skip(skip).limit(limit);
   try {
