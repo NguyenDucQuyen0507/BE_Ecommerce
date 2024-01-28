@@ -5,7 +5,7 @@ const Coupon = require("../models/coupon");
 
 const asyncHandler = require("express-async-handler");
 const { default: mongoose } = require("mongoose");
-const { REACT_APP_LIMIT_PRODUCTS } = require("../utils/contant");
+const { LIMIT_PRODUCTS } = require("../utils/contant");
 
 // const createOrder = asyncHandler(async (req, res, next) => {
 //   const { id } = req.user;
@@ -153,7 +153,7 @@ const getAllOrder = asyncHandler(async (req, res) => {
 
   //* pagination
   const page = +req.query.page || 1;
-  const limit = +req.query.limit || REACT_APP_LIMIT_PRODUCTS;
+  const limit = +req.query.limit || LIMIT_PRODUCTS;
   const skip = (page - 1) * limit;
   queryCommand.skip(skip).limit(limit);
   try {
@@ -234,7 +234,7 @@ const getOrderUser = asyncHandler(async (req, res) => {
   }
   //* pagination
   const page = +req.query.page || 1;
-  const limit = +req.query.limit || REACT_APP_LIMIT_PRODUCTS;
+  const limit = +req.query.limit || LIMIT_PRODUCTS;
   const skip = (page - 1) * limit;
   queryCommand.skip(skip).limit(limit);
   try {
