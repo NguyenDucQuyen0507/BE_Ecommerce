@@ -2,6 +2,7 @@ const Product = require("../models/products");
 const asyncHandler = require("express-async-handler");
 const slugify = require("slugify");
 const { v4: uuidv4 } = require("uuid");
+const { REACT_APP_LIMIT_PRODUCTS } = require("../utils/contant");
 const createProducts = asyncHandler(async (req, res) => {
   const { title, price, description, brand, category, color } = req.body;
   const thumb = req?.files?.thumb[0]?.path;
@@ -144,7 +145,7 @@ const getProducts = asyncHandler(async (req, res) => {
   //limit là số object được gọi khi mỗi lần gọi api.
   const page = +req.query.page || 1;
   //nếu client không nhập giá trị page thì nó sẽ lấy mặc định là 1
-  const REACT_APP_LIMIT_PRODUCTS = 7;
+  // const REACT_APP_LIMIT_PRODUCTS = 7;
   const limit = +req.query.limit || REACT_APP_LIMIT_PRODUCTS;
   //giói hạn phần từ trả về mỗi trang, nếu client koh nhập thì nó sẽ lấy là 2
   const skip = (page - 1) * limit;

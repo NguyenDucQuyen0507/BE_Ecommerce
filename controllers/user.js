@@ -2,7 +2,7 @@ const User = require("../models/users");
 const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
-const { users } = require("../utils/contant");
+const { users, REACT_APP_LIMIT_PRODUCTS } = require("../utils/contant");
 const crypto = require("crypto");
 const { v4: uuidv4 } = require("uuid");
 const sendMail = require("../utils/sendMail");
@@ -408,7 +408,7 @@ const getUsers = asyncHandler(async (req, res) => {
   //limit là số object được gọi khi mỗi lần gọi api.
   const page = +req.query.page || 1;
   //nếu client không nhập giá trị page thì nó sẽ lấy mặc định là 1
-  const limit = +req.query.limit || process.env.REACT_APP_LIMIT_PRODUCTS;
+  const limit = +req.query.limit || REACT_APP_LIMIT_PRODUCTS;
   //giói hạn phần từ trả về mỗi trang, nếu client koh nhập thì nó sẽ lấy là 2
   const skip = (page - 1) * limit;
   //là số object cần bỏ qua, ở đây sau khi tính toán nó sẽ là 0 nghĩa là nó sẽ lấy object từ vị trí đầu tiên trở đi
